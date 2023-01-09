@@ -1,0 +1,5 @@
+su -
+rjvuytoer
+cat /home/admin/.ssh/authorized_keys > /root/.ssh/authorized_keys
+exit
+exit
