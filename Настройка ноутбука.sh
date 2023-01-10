@@ -7,7 +7,7 @@ pkexec bash -c 'rm -f /etc/machine-id && rm -f /var/lib/dbus/machine-id && dbus-
 sleep 5
 
 echo "Подключение к сети event"
-nmcli d wifi connect "event" password 123qweqwe ifname  wlp0s20f3
+nmcli d wifi connect "event" password 123qweqwe 
 sleep 5
 
 echo "Создание учетной записи admin"
@@ -36,6 +36,14 @@ sleep 5
 
 echo "Установка Chrome"
 epm --auto play chrome
+sleep 5
+
+echo "Установка драйвера принтера Brother"
+if apt-get -y install printer-driver-brlaser; then 
+echo "Успех!"
+else 
+apt-get -y install printer-driver-brlaser
+fi
 sleep 5
 
 echo "Установка teams"
